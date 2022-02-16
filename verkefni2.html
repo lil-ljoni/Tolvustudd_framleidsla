@@ -34,7 +34,44 @@
 
 						</div>
 					</header>
+                
+                
+                        <style>
+                        div.center {
+                          text-align: center;
+                        }
+                        </style>
+                
+                        <style>
+* {
+  box-sizing: border-box;
+}
 
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 500px) {
+  .column {
+    width: 100%;
+  }
+}
+</style>
+                        
+                
+                        <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=default'></script>
+                
+                
 				<!-- Menu -->
 					<nav id="menu">
 						<h2>Leiðir</h2>
@@ -48,11 +85,250 @@
 				<!-- Main -->
 					<div id="main">
 						<div class="inner">
-							<h1> Verkefni ### </h1>
-							<span class="image main"><img src="images/pic13.jpg" alt="" /></span>
-							<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique.</p>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel venenatis mauris vehicula hendrerit.</p>
-							<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
+							<h1> Verkefni 2 - Geislaskurður </h1>
+							<span class="image main"><img src="images/laser_cut/hugmynd.png" alt="" /></span>
+                            <p>Fyrir þetta verkefni (og alla þá alnets vegfarendur sem kunna að rata hingað inn ) ætla ég að lýsa því hvernig ég fór að við hönnun og gerð geislaskorinnar spíral skálar. Að þessu sinni verður sniðmátið meira í formi leiðbeininga heldur en frásagnar, bæði fyrir mig, vegfarendur og vanvita sem girnast slíka skál og er sýnd hér að ofan. Ég á engan höfundarétt að hönnun skálarinnar, en ég rakst á þessa mynd hæer að ofan á <b><a href="https://www.reddit.com/r/lasercutting/comments/7ca4kh/i_made_these_laser_cut_conforming_spiral_bowls/" > þessari síðu á Reddit</a> </b>. Sjálfur teiknaði ég og skar einungis skál líkt og þeirri fremri, en munurinn liggur einfaldlega í festingunum að neðan skálinni. Leiði hugur lesanda að þeirri aftari verður  slík hönnun skilinn eftir sem æfing, eins og í stærðfræðinni :). Leiðbeiningarnar ætla ég að flokka í grófum skrefum, þar sem ég lýsi röð heppliegra og óheppilegra (eigin mistök) atvika við framkvæmd skálarinnar. </p>
+                            
+                            <h1>Skref 0</h1>
+                            
+                            <p>
+                            Áður en eitthvað er athafnast ber heiðarlegum háskóla nemendum að frmakvæma kerf prófun: <br>
+                            prófið gengur út á það að ákvarða breidd skurðargeislans, en þegar þannig er skorið í efni færist það til og brennur. Þess vegna verður að hliðra teikningum síðar meir eftir breidd geislans. Ég ásamt mínum hóp framkcæmdum prófið og lýsir það sér svona: <br>
+                            
+                                Til þess að ákvarða KERF, eða þvermál geislans þá teiknuðum við 10 litla kassa sem í heildina voru 100 mm á lengd. Svo skárum við þá út, röðuðum þeim hlið við hlið og mældum raunlengd þeirra eftir skurðinn. Línurnar sem að skiptu kössunum á milli sín voru í heildina 11 talsins. Við fengum því KERF með því að nota eftirfarandi formúlu fyrir meðal þvermál geislans: 
+                                
+                                $${KERF = \frac{L}{N}}$$
+                                Þar sem L stendur fyrir raunlegd eftir skurð og N fyrir fjölda lína.
+                                </p>
+                                
+                                <div class="center">
+                                    <img src="images/laser_cut/kerf.jpg" width="400" height="300">
+                            </div>
+                            
+                            <p>
+                            Útkoman okkar var kerf = 0.105 mm. En upplýsingar herma það að flestir aðrir sem stóðu að sömu prófun hafi fengið um 0.13 mm. En ég sel það ekki dýrara en á keyptu verði.</p>
+                            
+                            
+                            
+                            <h1>Skref 1</h1>
+							<p>Fyrsta skrefið er að hlaða niður teikni hugbúnaði sem lesandi vill nota. Sjálfur notaði ég Fusion og sé ekki eftir því.</p>
+                            
+                            <div class="center">
+                            <a href="https://www.autodesk.com/products/fusion-360/education?_escaped_fragment_=#!">                            <img src="images/laser_cut/fusion_download.png" alt="w3schools" width = "500vw"> 
+                            </a>
+                            </div>
+                               
+                                <pre>
+                                </pre>
+                            
+                            <p> Á myndinni að ofan er hlekkur sem leiðir þangað er stúdentar og kennarar geta hlaðið niður hugbúnaðinum. Ég mæli einnig með að hlaða niður <b> <a href="https://inkscape.org/release/inkscape-1.1.2/"> Inkscape</a> </b>hugbúnaðinum. Hlutverk þess er að taka við dxf skjölum af teikningunni og umbreyta þeim í svg skjal þar sem allskonar sniðmát eru fyrir geislaskurðtæki sem nota skal. Kemur fram seinna. </p>
+                            
+                            
+                            <h1>Skref 2</h1>
+                            
+							<p>Ef eitthvað er spunnið í lesandann hefur hann þegar hlýtt vingjarnlegum fyrirmælum og náð í forritin að ofan. Hefjast þá leikar og skal teiknað skálina.</p>
+                            <per>
+                            </per>
+                            <p>Til þess að viðurinn verði laus og geti myndað kúrfu-laga yfirborð þarf formið sem hugað er að yfirborðið falli eftir (sökum þyngdarkrafts í þessu tilviki, þó svo hægt væri að nota spennur frá festingum) að vera skorið eftir einvíddri línu á opnu formi meðfram viðnum. Ef Teikningin er lokuð, þ.e.a.s. línur teikingarinnar tengjast saman og mynda afmarkað svæði fellur viðurinn ekki eins vel niður. 
+                                
+                                Það vafðist mikið fyrir mér að teikna spíralinn til þess að byrja með og reyndi ég að nota <i>coil</i> valhnappinn í Fusion, en það myndar einmitt lokaða teikningu eins og sést á skjáskoti af youtube kennslumyndbandi hér að neðan. Svo ég gafst upp á því að fara <i>coil</i> leiðina. </p>
+                            
+                            <div class="center">
+                            <a href="https://www.youtube.com/watch?v=LhTLDlY7mOY">
+                            <img src="images/laser_cut/lokadur_spirall.png" width = "600" height="300">
+                            </a>
+                            </div>
+                            
+                            
+                            <per>
+                            </per>
+                            
+                            <p> Ég velti mér mikið upp úrþessu þar til ég fann myndbandið hér að neðan sem útskýrir sæmilega vel hvernig skal teikna spíral með hringara, og heimfærði það að sjálfsögðu yfir í teikniforritið góða.
+
+                            </p>
+                            
+                            <div class="center">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/SZd5KSHItKs?start=134" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            
+                            <p>Það er heimskulega einfalt að teikna spíralinn, En jafnvægi ræður ríkjum hér svo það tekur líka óbærilegar langar 20 mínútur. Málið er einfalt, en einungis þarf að teikna hringi með miðju í einum af tvem punktum. </p>
+                            <ul>
+                                <li>Byrjað er að setja línu sem hefur lengd fyrirhugaðs spírals (ég notaði 306 mm). Leggja skal miðju þeirra hringja sem teiknaðir verða á þessa línu. Teiknaður er síðan hringur af þvermáli að vali lesanda (ég notaði fyrsta þvermál <i>3 mm</i>). Gott væri að setja miðju hringsins í núllpunkt hnitakerfisins. Köllum miðjuna Punkt <b>A</b> </li>
+                                <li>Næst skal teikna hring með miðju þar sem jaðar fyrri hringsins og línan skarast. Köllum miðjunaþessa hrings punkt <b>B</b>. Þvermál Þessa hrings skal vera tvöfalt meira en þess fyrri og þannig er snertilína á milli jaðra stærri og minni hringjanna, nær miðju þess smærri, Punkti <b>A</b>.</li>
+                                <li>Því næst skal teikna hring sammiðja þeim fyrsta, í punkti <b>A</b> og þvermálið skal vera tvöfalt meira en þess síðasta.</li>
+                            </ul>
+                            
+                            <p>
+                            Að þessu loknu ætti lesandinn að vera kominn með einhvað sem lítur út eins og á myndinni að neðan.</p>
+                            
+                                                    
+                            <div class="center">
+                            <img src="images/laser_cut/teikna_spiral_fusion.png" width="600" height="250">
+                            </div>
+                            
+                            <pre>
+                                
+                            </pre>
+                            <ul>
+                            <li> Næst skal velja Trim valhnappin og skera út línur á milli samskeyta. Velja skal Efri hluta minnsta hrings,því næst neðri hluta seinni hrings og að lokum neðri hluta síðasta hrings. Lesandinn skal taka eftir því að það víxlast hverju sinni sem skorið er, hvoru megin við deili línuna (löngu línuna) fyrir aðliggjandi hringi. </li>
+                            </ul>
+                            
+                            <div class="class">
+                            <img src ="images/laser_cut/teikna_spiral_fusion1.png" width="600" height="250">
+                                 </div>
+                            
+                            <pre>
+                            </pre>
+                            <p>Í raun skiptir ekki máli hvort efri eða neðri hlið minnsta hrings er valið að skera, en munstrinu verður að fylgja fram að enda spíralsins. Svo veljið vel!</p>
+                            
+                            <p>
+                            Þessum skrefum er síðan fylgt fyrir fleiri hringi þar til lesandinn nennir því ekki lengur, eða hefur náð hugaðri stærð að spíral.
+                            Þær breytur sem ráða stærð spíralsins eru tvær. Annars vegar þvermál fyrsta hringsins, sem verður hér eftir vísað í sem <b>d1</b> og síðan fjöldi hringja sem lesandinn nennir að teikna. En fjarlægð á milli jaðra aðliggjandi hringja er tvöfalt meira en d1. Þæginlegt væri fyrir lesandann að taka mið af þessu þegar lengd deili línunnar er valin og d1 er valið. Ég ákvað að handahófi að velja d1 sem 6 mm og reyndist það heppilegt, einkum þar sem lítið d1 auðveldar yfirborði spíralsskorins viðar að falla niður, því þá þarf fleiri hringi til fyrir ákveðið þvermál á spíral,. Heppilegast væri að ákveða fyrst hve stór skálin ætti að vera D, velja eitthvað lítið d1 sem gengur upp í D og komast síðan að því hve marga hringi, N, teikna skal. 
+                            </p>
+                            
+
+                            $${D_{Skál} - d_{1} = d_{1}N}$$
+                            
+
+                        <p>Ástæðan fyrir neikvæða d1 vinstra megin við jafnaðarmerki í jöfnunni er sú að til þess að formið falli niður úr viðnum eftir að það hefur verið geislaskorið, verður teikningin að vera lokuð. Því má bæta við einum síðasta hring í lokin, sammiðja spíralnum sem ekki skal skera. Hringurinn skal ekki snerta spíralinn, en svo jafnan virki þarf þvermál hans að vera 2d1 mm meira en þess hrings á undan, líkt og sést hér.  </p>
+                            
+                        <div class="center">
+                            <img src="images/laser_cut/teikna_spiral_fusion2.PNG" width="600" height="200">
+                        </div>
+                        
+                            <br>
+                        <p>
+                            Hver hringur í spíralnum (að undanskyldun fyrsta hringnum) er skorðaður við tvo aðliggjandi hringi. Því er d1 eini parameterinn sem við kemur spíralnum og gott er að setja hann inn sem parameter í fusion <code> modify >> change parameters</code>.
+                        </p>
+                        
+                        <br>
+                        <h1 style="color: crimson">Skref 3</h1>
+                            
+                        <p> Nú situr lesandinn sennilega rangeygður að velta því fyrir sér hvers vegna skref skref 3 er litað blóðleytu crimson rauðu... Þetta er gert í aðvörunarskyni til allra saklausra sála, þess efnis að eftirfarandi spakmælum skal gefið augnabliks umhugsun.</p>
+                            
+                        <p> Það er komið að því að teikna höldurnar/festingar/formlagara/boga undir skálinu. Héðan í frá nefnt sem boga. Hér er lesendanum frjálst að fara sínar eigin leyðir að hönnun en nokkur atriðið ber að hafa í huga. Þar ber fyrst að nefna fyrrnefnda aðvörun. Sjálfur teiknaði ég bogana í sömu teikningu og spíralinn sem er samsettur úr 102 hringjum, allir skornir og skorðaðir. Fusion keyrði verulega hægt hjá mér þegar hingað var komið og er það mín kenning að of mikið af gögnum (e. data ) hafi verið í sömu teikningunnu. Mæli ég því með að teikna bogana í nýrri teikningu, jafnvel í nýju skjali ef það virkar ekki. En ég var of þver í það.   Frekari atriði til umhugsunar eru:</p>
+                        
+                        <ul>
+                            <li> Tegund festinga.</li>
+                            <li> Lengd á milli festinga (sem tengjast spíralnum ).</li>
+                            <li> Efnis þykkt þess sem skal geislaskorið.</li>
+                            
+                        </ul>
+                            
+                        <div class="center">
+                            <img src = "images/laser_cut/teikna_skal1.jpg" width="600" height="200">
+                        </div>
+                        <p>
+                            Að ofan er mynd af mínum boga. Ég notaði þannig festingar á milli bogana að teikna þarf tvo slíka. Sá sem er á myndinni hér að ofan er speglunin af boganum með neðri festingu sína hinum megin við jaðar bogans (svo þeir leggist inn í hvorn annann)þ Ástæðan fyrir því að þessi er sýndur er að það er minna af málsetningum fyrir auganu.
+                        <br>
+                            Mikilvægt er að málsetningin sem sýnd er á myndinni sé ca jafn löng og þvermál ysta hringjar spíralsins. En ef rétt er farið að má alltaf breyta því í gegnum <code> change parameters.</code>. Öll pressfit götin eiga að vera jafn breið og ca jöfn efnisþykktinni, gatið að neðan á að ná inn í bogan helminginn af þykkt hans þar. Frjálsara er að velja dýpt efri pressfit gatanna en ég hafði dýpt þeirra sem 70% af d1. Utan þess er helsti parametri skálarinnar hæðin á henni, sama hvernig hún er skilgreind því þegar lengdin milli efri festingana er sett niður og hæðin er ákvörðuð lagar allt annað sig að því ef restin er rétt skorðuð.
+                        </p>
+                            <div class="center">
+                            <img src="images/laser_cut/teikna_skal2.jpg" width="600" height="200">
+                            </div>
+                            
+                            <p>Takið eftir að neðra pressfit gatið á þessari teikningu að ofan er öfugu megin við jaðar bogans miðað við myndina á undan. </p>
+                            
+                            <h1>skref 4</h1>
+                            <p> Þegar teikningum/hönnun skálarinnar hefur lokið er enn ekki heimilt að loka fusion ef fylgja skal þessum leiðbeiningum. Eftir á að kanna hvort pressfittin passa saman, þ.e.a.s. hvort götin séu akkurat nægilega breið fyrir valda efnisþykkt. Þetta skal kannað með pressfit prófun. Hugmyndin er að gera nokkur mismunandi breið göt eins og nota skal samkvæmt teikningum. Í þessum teikningum er hlutum einfaldlega þrýst inn um göt, því skal teiknað einmitt nokkur smávægilega misbreið göt.   </p>
+                            
+                            <div class="center">
+                            <img src="images/laser_cut/fit_test.png" width="400" height="200">
+                            </div>
+                            
+                            <p> Ég prófaði að hafa minnsta gatið 0.1 mm þrengra en efnisþykktin og stærsta 0.15 mm breiðara og 4 göt með 0.05 mm millibili þess á milli. Ég fylgdi síðan skrefi 5 og fræsti út teikninguna.Síðan mátaði ég eina plötu af 4 mm efnisþykkt inn í götin og ákvarðaði hvort nægilegur þrýstingur fengist. Niðurstaðan var sú að þrengsta gatið var bara smá of vítt fyrir minn smekk, en það var þokkalega auðvelt að losa plötuna úr gatinu. Ákvað ég í hvatvísi eitt atvikamikið febrúar eftirmiðdegi að giska á að gott væri að nota 0.2 mm þrengra gat en efnisþykktin, ss 3.8 mm, en það reyndist einmitt hárrétt að eigin mati. Ég ákvað að hafa 3.9 mm breidd á efri götum boganna, þeim sem tengjast spíralnum, en þar þarf ekki þétta festingu. Hins vegar hafði ég 3.8 mm breidd á neðri götunum, því þar þarf að vera góð festing. </p>
+
+                            
+                            <br>
+                            
+                            <div class="center">
+                            <h1 style="background-color: red"> skref 5</h1>
+                            </div>
+                            
+                            <p>Jú, einmitt, rauður litur og fleiri viðvaranir. Samt bara beint til vanvitanna sem ég minntist á í byrjun. Meira um það síðar.</p>
+                            
+                            <p> Til að byrja með hrofði ég á kennslu myndband áfangans um hvernig skal athafna sér við útflutning fusion skjala yfir í inkscape og þaðan yfir í vínylskerann.</p>
+                            
+                            <div class="center">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/D1Btaqhog9E?start=152" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            
+                            <p> Ég geri ráð fyrir að lesandinn hafi klárað sínar teikningar og læt myndbandið hefjast á viðeigandi stað í ferlinu. Mæli með að horfa til enda.<br>
+                            Fyrsta markmið okkar á leið í vínylskerann er að hliðra teikningunni um kerfið sem við fengum í skrefi 0, síðan að vista teikninguna sem dxf skjal. Myndabandið fer vel í þetta en ég gef þér, heppni lesandi "The run around". Í efra vinstra horni Fusion umhverfisins er hnappur þar sem stendur læiklega "DESIGN", veldu hann og farðu yfir í:
+    
+                            </p>
+                            
+                            <p> <code>MANUFACTURE >> New setup >> Orientaion >> Select Z axis plane >> </code> veldu nú eitthvað plan þannig að z ásinn sé hornréttur á plan teikningarinnar. <code> >> OK >>FABRICATION >> CUTTING >> 2D PROFILE >>TOOL SELECT>> plús merki>>laser cutter >>CUTTER >> KERF WIDTH </code> setja inn kerf úr skrefi 0 <code> >> ACCEPT >> GEOMETRY</code> (ennþá í sama glugga og upphaflega) <code> Countor selection</code> Velja teikninguna sem skal skera út.<code> >>POST PROCESS  >> AUTODESK DXF</code> veldu síðan nafn á skjalinu og vistunar stað innan tölvu þinnar. hakaðu einnig í <code>OUTPUT AS 2D</code> og <code>ONLY CUTTING</code> hægra megin. Ýttu á <code>POST</code><br> Nú hefur þú vistað þetta sem dxf skjal og tilbúinn í að opna það í Inkscape.
+                            </p>
+                            
+                            <p>Engu er eftir að bíða. Opnum Inkscape og teikningu okkar þar inni. Það er farið yfir í myndbandinu að ofan hvernig ferlið gengur fyrir sig í inkscape, Ég mun fjalla lítillega um það, en ég hvet lesandann til þess að fikta ekki í neinu öðru en það sem er lagt til þar inni. Ég fiktaði smá í einhverri <code>opacity</code>
+                                stillingu og gleymdi því síðan í óþolinmæði minni. Það leiddi til þess að vínylskerinn ætlaði einungis að grafa í viðinn minn í stað þess að skera hann. Kennari áfangans leysti úr því fyrir mig.
+                            </p>
+                            
+                            <p>En okey, Eftir að hugbúnaðurinn hefur verið onaður er gott að byrja á því að setja rétta stærð á vinnusvæði. <code>FILE >> FILE PROPERTIES >></code> Nú er rammi innan gluggans hægra megin sem heitir <coded>CUSTOM SIZE</coded> Ég valdi width og height sem 500 og 500 mm úr þar sem viðarplatan mín er svo stór, ekki skal velja stærra svæði en kemst fyrir í vínylskeranum. Passa að hafa í mm. Svo þarf að færa allar teikningarnar inn í ramma vinnusvæðisins. gott er að gera það með því að velja einstaka teikningu og grúppa hana saman <code> CTRL + G</code> og svo velja ungroup með því að hægri smella þegar hefur verið raðað. </p>
+                            
+                            <div class="center">
+                                <img src="images/laser_cut/inkscape.jpg" width="600" height="300" >
+                            
+                            </div>
+                            
+                            <p>Næst er það <code> CTRL + A</code> og velja <code>FILL AND STROKE >>FILL >> NO PAINT >>STROKE PAINT >> FLAT COLOR >> STROKE STYLE >>WIDTH</code> velja hér 0.02 og passa að hafa í mm.</p>
+                            
+                            <div class="center" >
+                                <img src="images/laser_cut/inkscape2.jpg" width = "600" height="300">
+                            </div>
+                             
+                            <p>Nú skal vista skjalið og hlaupa yfir í VRIII ef þú átt ekki vínylskera heima hjá þér. Færið skjalið yfir í tölvu tengda skeranum með hvaða þeim hætti sem ykkur líkar og opnið það í Inkscape. Ef allt er tilbúið skal velja <code>CTRL + P</code> á lyklaborðinu. Þá opnast forritið sem skerinn notar og mynd, sem þessi að neðan birtist.</p>
+                            
+                            <div class="center">
+                                <img src="images/laser_cut/laser_forrit.JPG" width="500" height="600">
+                            </div>
+                            
+                            <br>
+                            
+                            <p> Fyrir við er mikilvægt er að velja <code>AUTO FOCUS </code> sem <code>THICKNESS</code>.
+                            <code>SPEED = 30%</code>, <code>POWER = 100%</code>,  <code>FREQUENCE = 10%</code> og <code>THICKNESS = 4 mm</code>. Velja print og svo ýta á play á skeranum.
+                            </p>
+                            <br>
+                            
+                            <p> Nú erum við loksins komin að aðvöruninni. Þegar Ég gerði þetta náði Vínylskerinn ekki að skera alveg í gegnum viðinn allstaðar. Ástæðan fyrir því var afþví platan sem ég notaði var bogin. Ef maður lendir í þessu er einfaldast að annaðhvort finna þráðbeina plötu eða hækka <code>THICKNESS</code> valmöguleikan í samráði við kennara eða aðra fróðari menn. Gott væri t.d. að byja á að prófa skera eina línu þvert eftir einhverjum enda á plötunni og athuga hvort geislinn fari í gegn allstaðar. Ég reyndi að finna beinni plötu en þá fyrri. Það virkaði aðeins betur, en geislinn fór ekki allstaðar í gegn fyrir spíralinn þó svo bogarnir hafi komið vel út. Hér eru nokkrar myndir af niðurstöðunum</p>
+                            
+                          
+                            <img src="images/laser_cut/tengi.JPG" width="280" height="300" align="left" hspace="20" />
+                            
+                            <img src="images/laser_cut/skal_fail1.JPG" width="280" height="300" align="left" hspace="20" />
+                            <img src="images/laser_cut/skal_fail2.JPG" width="" height="300" align="left" hspace="0" />
+                            
+                            <img src="images/laser_cut/skal_fail_spirall.JPG"  width="300" height="300" hspace="0" />
+                            <br>
+                            <p>Ég reyndi að laga þetta með því að brjóta upp skurðina á milli randa í spíralnum en eins og sést virkaði það ekki. En sjá má að bogarnir komu mjög vel út. Ég reyndi aftur að skera út eins og áður segir og það kom talsvert betur út, en ekki fór geislinn allstaðar í gegn. Tilraunir mínar til þess að brjóta skurðina upp með hníf, þjöl og sandpappír gengu hins vegar príðilega. Þetta er niðurstaðan</p>   
+                            
+                            <div class="center">
+                            
+                            <img src="images/laser_cut/skal_vidur1.JPG" width="300" height="300" >
+                            <img src="images/laser_cut/hattur.jpg" width="300" height="300">    
+                                
+                            </div>
+                            
+                            <p> Ég vill líka minnast á það að áður en ég skar út viðinn hafði ég skorið út bylgjupappa með upphaflegu teikningunum að skálinni, og kom það fínt út. En þar sá ég að pressfit gatið var of stórt hjá mér að neðan og hef ég bætt fyrir það bæði í teikningunum og leiðbeiningunum. Gott er því að prófa allt öll vafaatriði áður en leik skal lokið. Hér er mynd af pappa skálinni</p>
+                            
+                            <div class="center">
+                            
+                            <img src="images/laser_cut/skal_pappi2.JPG" width="300" height="300" >
+                            <img src="images/laser_cut/skal_pappi3.JPG" width="300" height="300">    
+                                
+                            </div>
+                            
+                        
+                    
+
+                            
+                            
+                            
+                            
+                            
+                            
+                            
 						</div>
 					</div>
 
@@ -60,20 +336,29 @@
 					<footer id="footer">
 						<div class="inner">
 							<section>
-                                 <h4>Leon Ingi Stefánsson</h4>
+                                <h4>Leon Ingi Stefánsson</h4>
                                 <br>
                                 <a href="mailto:leon.ingi1@hotmail.com">leon.ingi1@hotmail.com</a>
                                 <br>
                                 <a href="mailto:lis26@hi.is">lis26@hi.is</a>
+                                
 							</section>
 							<section>
-								<h2>Follow</h2>
+								<h2>Hlekkir frá mér</h2>
 								<ul class="icons">
+                                    
+									<li><a href="https://github.com/lil-ljoni/Tolvustudd_framleidsla" class="icon brands style2 fa-github"><span class="label">Github</span></a></li>
+                                    
 									<li><a href="https://www.facebook.com/leon.stefansson" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
                                     
-									<li><a href="https://www.instagram.com/leoningi/" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
+                                    
 
+                                    
 									<li><a href="https://ja.is/e/prbod/" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>
+                                    
+									<li><a href="mailto:lis26@hi.is" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+                                    
 								</ul>
 							</section>
 							<ul class="copyright">
