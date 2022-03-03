@@ -1,0 +1,4 @@
+CE3_tankur[[:space:]]v2[[:space:]]-[[:space:]]Ultimaker[[:space:]]Cura[[:space:]]2022-03-01[[:space:]]19-32-16.mp4 filter=lfs diff=lfs merge=lfs -text
+CURA_tutorial.mp4 filter=lfs diff=lfs merge=lfs -text
+*.psd filter=lfs diff=lfs merge=lfs -text
+*.mp4 filter=lfs diff=lfs merge=lfs -text
