@@ -71,7 +71,7 @@
                                 <li> Ég er ekki snillingur í html. Ég kann að googla, og mun benda á sniðuga hluti sem ég finn fyrir þetta og mögulega fleiri verkefni. </li>
                                 
                                 
-                                <li>Besta nýtingin á tíma sagðs nemenda væri að lesa <b>Tips and tricks nemandans</b> neðst á þessari síðu. </li>
+                                <li>Besta nýtingin á tíma sagðs nemenda væri að lesa valið efni í <b>Tips and tricks nemandans</b> neðst á þessari síðu. </li>
                                 
                                 <li> Ég er að gera þetta verkefni í annað sinn, vegna þess að ég nennti ekki að gera það almennilega í fyrsta skiptið. Það borgar sig ekki. Því þegar þetta er skrifað er 30 maí, 2022, prófin búin og mér langar í annan bjór.</li>
                                 
@@ -265,7 +265,7 @@
                             
                             <p>Án þess að hafa kynnt mér nákvæmlega hvað git er, veit ég að margir forritarar nota það í stórum sameiginlegum verkefnum. Helsta ástæðan fyrir því er að hægt er að vista skjöl inni á github á einhverju repository í gegnum git, ef margir hafa aðgang að því er hægt að skoða skjöl, breyta þeim og bæta við nýjum útgáfum án þess að skaða fyrri útgáfur ásamt því að sjálfsögðu að bæta við nýjum skjölum. Þá sést hverjir hafa gert hvað bæði með git og í github. Í mínum tilgangi þarf ekki að nota git en fyrst kennari áfangns mælti með því notaði ég það einfaldlega. </p>
                             
-                            <p> Þegar að búið er að setja upp github aðgang og hlaða niður git ásamt því að skrá sig inn á það og velja repository eins og er farið í gegnum í <a href = "#git_myndband">myndbandinu að ofan</a>, og jafnframt ef komið er að þeim tímapunkti að hlaða skjölum inn á umrætt repository er maður eingöngu örfáum git-skipunum frá því að gera einmitt það.</p>
+                            <p> Þegar að búið er að setja upp github aðgang og hlaða niður git ásamt því að skrá sig inn á það og velja repository eins og er farið í gegnum í <a href = "#git_myndband">myndbandinu að ofan</a>, og jafnframt ef komið er að þeim tímapunkti að hlaða skjölum inn á umrætt repository er maður eingöngu örfáum git-skipunum frá því að gera einmitt það. En ég ætla fara yfir öll helstu skref um hvernig maður gerir það og einhver aukaatriði.</p>
                             
                             <br>
                             
@@ -291,13 +291,107 @@
                             
                             <p>Í efstu gráu stöfunum á myndinni að ofan stendur einmitt git status. Fyrsta úttak skipunarinnar er að segja mér að ég sé á aðal greininni. Það er ss hluturinn sem ég nefndi "útgáfur" hér að ofan einhverstaðar. </p>
                             
-                            <p> Næst er mér sýnt í stafrófsröð þau skjöl sem hefur verið breytt, en hafa ekki verið uppfærð inni á Github og mér er þannig bent á að nota <code>git add file</code> til þess að gera skjölin tilbúin til þess að verða <b>commit-uð</b>. Næst er mér bent á í "Untracked files" að þau skjöl sem eru í rauðu þar undir séu ný og óþekkt, það þarf ss líka að nota <code> git add</code> á þau. hægt er að nota skipunina git add á öll skjöl í einu með því að setja bil og punkt fyrir aftan orðið "add" í skipuninni.</p>
+                            <p> Næst er mér sýnt í stafrófsröð þau skjöl sem hefur verið breytt, en hafa ekki verið uppfærð inni á Github og mér er þannig bent á að nota <code>git add file</code> til þess að gera skjölin tilbúin til þess að verða <b>commit-uð</b>. Næst er mér bent á í "Untracked files" að þau skjöl sem eru í rauðu þar undir séu ný og óþekkt, það þarf ss líka að nota <code> git add</code> á þau. hægt er að nota skipunina git add á öll skjöl í einu með því að setja bil og punkt fyrir aftan orðið "add" í skipuninni eins og að neðan.</p>
+                            
+                            <br>
+                            
+                            <div class="center">
+                            <img src="images/git_3.png" width="600">
+                            </div>
+                            <br>
+                            
+                            <p>Eins og sést er fyrsta skipunin <code>git add .</code> og sú næsta er <code>git status</code>. Ekkert úttak birtist eftir add file . en þegar beðið er um statusinn sést að skjölin hafa farið frá því að vera rauð yfir í græn. greinilega eitthvað gott að gerast. settningin "canges to be committed" segir okkur að allt sé í orden með grænu skjölin, þeim hefur verið addað beðið sé eftir því að þau séu committ'uð. <br>
+                            Hægt er að add'a directori'um sérstaklega með því að sleppa punktinum á eftir "add" og setja hans í stað nafnið á directori'inu.   
+                            </p>
+                            
+                            <br>
+                            
+                            <p>Næst er það <code>git commit</code> en það geymir breytingarnar á "heima" (e. local) repository sem hefur verið frumstillt (e. initialized) í upphafi eins og farið var yfir í <a href = "git_myndband">myndbandinu</a> um git í byrjun. Sérstakt auðkenni (e. id) fylgir hverju commit'i sem er nokkura stafa löng runa, en hægt er að merkja commit'ið með skilaboði að eigin vali með <code>git commit -m " "</code> þar sem <code>m</code> stendur fyrir "message". Þetta getur reynst afar gott að tileinka sér af mörgum ástæðum sem ég fer yfir í einni viðvörun hér aðeins neðar.  </p>
+                            
+                            
         
+                            <br>
+                            
+                            <div class="center">
+                            <img src="images/git_4.png" width="600">
+                            </div>
+                            <br>
+                            
+                            <p>Hér sést að skilaboðið mitt var <code>"endurgert_verkefni1"</code>. Fyrir neðan það stendur auðkenni commit'sins "fed58e2" en það er í raun talsverð stytting á raunverulega auðkenninu.gott er að vita af <code>git log</code> skipuninni, en hún er óþarfi í þessu ferli. Úttak skipunarinnar er yfirlit og upplýsingar um síðustu commit'in sem hafa verið framkvæmd, eins og sést hér að neðan. </p>
+                            
+                            <br>
+                            
+                            <div class="center">
+                            <img src="images/git_5.png" width="600">
+                            </div>
+                            <br>
+                            
+                            <p>Þarna sést raunverulega auðkenni commit'sins og einhverjar aukalegar upplýsingar. Það getur reynst gott að vita af þessari skipun ef að maður þarf að fara yfir einhvað gamalt commit sem hefur verið gallað eða tjónast.</p>
+                            
+                            <br>
+                            
+                            <p>Næst í ferlinu er að nota <code>git push</code> skipunina en hún sendir local commit'ið á hið fjarlæga (e. remote) repository. Ef að notandinn hefur fleiri en eitt repository þarf líklegast nafnið á áfangastaðnum að fylgja með.</p>
+                            
+                            <br>
+                            
+                            <div class="center">
+                            <img src="images/git_6.png" width="600">
+                            </div>
+                            <br>
+                            
+                            <p>Þá er sagan sögð og vegfarendur alnetsins ættu að geta séð síðuna eða efnið innan þeirra skjala sem hafa verið hýst innan github.</p>
+                            
+                            <div class="center">
+                            <h2 style="color: orangered">GIT AÐVÖRUN</h2>
+                            
+                            </div>
+                            
+                            <p>Að gerð verkefnis 2 lenti ég í því að commit'a myndbandsskrá sem var vel yfir 100 mb að stærð. Þetta er algjört neyðarástand í fótsporum ósjóaðra gittara vegna þess að git leyfir ekki notendum að push'a skrám yfir 100 mb að stærð. Ég eyddi samtals yfir heilum 14 klukkutímum í leit að því hvernig væri hægt að laga þetta. Við fyrstu leitir á google hjómar forritið <a href="https://git-lfs.github.com/">git-lfs</a> eins og frábær hugmynd, en það á að leyfa fólki að push'a stærri skrám en 100 mb. Þetta hins vegar lagar ekki vandamálið, sem er í rauninni að ég commit'aði of stórri skrá með git og nú situr hún föst þar. Það þarf því að eyða commitinu ( eða bara skránni þaðan) en að eyða skránni sjálfri reyndist mér erfiðara vandamál á þeim tíma svo ég eyddi bara commiti'nu. </p>
+                            
+                            <p>Það er komið meira en mánuður síðan ég lenti í þessu neyðarástandinu svo ég man ekki  nákvæmlega hvaða skipanir ég notaði, eða í hvaða röð. En ég man þetta var alveg agalegt vesen að finna réttu skipunina. Hinsvegar þegar hún er fundin, þá tekur þetta minna en 5 mínútur. Áður en ég fer yfir það vill fara nokkrum varnaðarorðum yfir þessa aðgerð.</p>
+                            
+                            <div class="center">
+                            <h3 style="color: orangered">Ekki gera nýtt commit</h3>
+                            
+                            </div>
                             
                             
+                            <p>Ekki committ'a aftur án þess að hafa leyst úr vandamálinu, þetta flækir bara fyrir, sérstaklega ef reynt er að commit'a oft og engin commit eru merkt með skilaboðum. Þá þarf að vita hvenær fyrsta slæma committ'it var framkvæmt. Hins vegar ef það var gert þarf bara að nota <code>git log</code> skipunina og finna auðkennið á fyrsta slæma commit'inu og nota eina af eftirfarandi leiðum </p>
+                            
+                            <br>
+                            
+                            <div class="center">
+                            <img src="images/git_7.png" width="600">
+                            </div>
+                            <br>
+                            
+                            <p> Þetta er skjáskot af stack overflow, ég notaði ekki þessar skipanir, en engu að síður ætti t.d. fyrsta skipunin að færa "tímalínu" git yfir á síðasta góða commit'ið sem stimplað er inn með auðkenni þess.</p>
+                            
+                            <p> Ef einhver les þetta með svipað vandamál en fann ekki lausnina sem hann leitaðist eftir þá eru hér nokkrir hlekkir sem ég man eftir að hafa notað og rekist á:</p>
                             
                             
+                            <div class="center">
+                            <h3><a href = "https://medium.com/analytics-vidhya/tutorial-removing-large-files-from-git-78dbf4cf83a">hlekkur_1</a></h3>
+                                
+                            <h3><a href = "https://www.baeldung.com/git-remove-file-commit-history">Hlekkur_2</a></h3>
+                            <h3><a href = "https://stackoverflow.com/questions/1338728/delete-commits-from-a-branch-in-git">Hlekkur_3</a></h3>
+                            <h3><a href = "https://stackoverflow.com/questions/63283081/git-remove-the-bad-commit-and-push-to-the-remote-repository">Hlekkur_4</a></h3>
+                                <br>
+                                <p>Hérna eru svo tveir hlekkir um algengar git skipanir</p>
                             
+                                <h3><a href = "https://blog.testproject.io/2021/03/22/git-commands-every-sdet-should-know/">Git_skipanir_1</a></h3>
+                                <h3><a href = "http://guides.beanstalkapp.com/version-control/common-git-commands.html">Git_skipanir_2</a></h3>
+                                    
+                                <br>
+                                
+                                <p>Fyrir þá sem villja hylma sér þeirri upplifun að lesa um þetta, þá man ég eftir að hafa horft á þetta video og lært sitthvað á git.</p>
+                                
+                                <br>
+                                
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/USjZcfj8yxE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                
+                                
+                            </div>
                             
                             
                             
